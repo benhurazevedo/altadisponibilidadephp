@@ -1,0 +1,40 @@
+<html>
+<head>
+<style>
+table {
+  margin: 0;
+  border: 1px solid grey;
+  border-collapse: collapse;
+}
+
+td,th {
+  margin: 0;
+  padding: 6px;
+  border: 1px solid grey;
+}
+</style>
+</head>
+<body>
+	<table>
+		{% for linha in dados_csv %}
+			{% if loop.first  %}
+				<thead>
+					<tr>
+						{% for dado in linha %}
+							<th>{{ dado }}</th>
+						{% endfor %}
+					</tr>
+				</thead>
+				<tbody>
+			{% else %}
+				<tr>
+					{% for dado in linha %}
+						<td>{{ dado }}</td>
+					{% endfor %}
+				</tr>
+			{% endif %}
+		{% endfor %}
+		</tbody>
+	</table>
+</body>
+</html>

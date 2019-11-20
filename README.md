@@ -1,0 +1,1 @@
+This app is projected to be used in balance loads for high disponibility
